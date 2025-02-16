@@ -1,0 +1,140 @@
+{
+  "pages": [
+    {
+      "name": "GCS_page",
+      "title": "GCS",
+      "elements": [
+        {
+          "type": "panel",
+          "name": "GCS_panel",
+          "title": "gcs 一般題",
+          "elements": [
+            {
+              "type": "rating",
+              "name": "GCS_E",
+              "title": "睜眼",
+              "titleLocation": "top",
+              "isRequired": true,
+              "autoGenerate": false,
+              "rateCount": 4,
+              "rateValues": [
+                {
+                  "value": 1,
+                  "text": "完全沒有張眼"
+                },
+                {
+                  "value": 2,
+                  "text": "痛時睜眼"
+                },
+                {
+                  "value": 3,
+                  "text": "聽到聲音睜眼"
+                },
+                {
+                  "value": 4,
+                  "text": "自動睜眼看外界"
+                }
+              ],
+              "displayMode": "buttons"
+            },
+            {
+              "type": "rating",
+              "name": "GCS_V",
+              "title": "說話",
+              "titleLocation": "top",
+              "isRequired": true,
+              "autoGenerate": false,
+              "rateValues": [
+                {
+                  "value": 1,
+                  "text": "無言語反應"
+                },
+                {
+                  "value": 2,
+                  "text": "僅發出聲音"
+                },
+                {
+                  "value": 3,
+                  "text": "僅呢喃單字"
+                },
+                {
+                  "value": 4,
+                  "text": "答非所問"
+                },
+                {
+                  "value": 5,
+                  "text": "講話有條理"
+                }
+              ],
+              "displayMode": "buttons"
+            },
+            {
+              "type": "rating",
+              "name": "GCS_M",
+              "title": "動作",
+              "titleLocation": "top",
+              "isRequired": true,
+              "autoGenerate": false,
+              "rateCount": 6,
+              "rateValues": [
+                {
+                  "value": 1,
+                  "text": "完全沒有動作反應"
+                },
+                {
+                  "value": 2,
+                  "text": "肢體伸直"
+                },
+                {
+                  "value": 3,
+                  "text": "肢體呈現不自然彎曲"
+                },
+                {
+                  "value": 4,
+                  "text": "受痛覺時肢體自然彎曲"
+                },
+                {
+                  "value": 5,
+                  "text": "定位痛覺位置並去除刺激"
+                },
+                {
+                  "value": 6,
+                  "text": "可按指令動作"
+                }
+              ],
+              "rateDescriptionLocation": "bottom",
+              "displayMode": "buttons"
+            },
+            {
+              "type": "expression",
+              "name": "gcs_score",
+              "title": "總分",
+              "expression": "{gcs_m} + {gcs_v} + {gcs_e}",
+              "displayStyle": "decimal"
+            }
+          ]
+        },
+        {
+          "type": "gcs_custom_question",
+          "name": "gcs_custom_question",
+          "title": "gcs 客製題"
+        },
+        {
+          "type": "gcs_specialized_question",
+          "name": "gcs_specialized_question",
+          "title": "gcs 專業題"
+        },
+        {
+          "type": "gcs_composite_question",
+          "name": "gcs_composite_question",
+          "title": "gcs 複合題"
+        }
+      ]
+    }
+  ],
+  "showQuestionNumbers": "off",
+  "questionErrorLocation": "bottom",
+  "completeText": "確認",
+  "questionsOnPageMode": "singlePage",
+  "widthMode": "static"
+}
