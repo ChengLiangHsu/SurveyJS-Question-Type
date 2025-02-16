@@ -17,11 +17,14 @@ ElementFactory.Instance.registerElement(
       return new QuestionGCSModel(name);
     }
 );
+
 Serializer.addClass(
     CUSTOM_TYPE,
     [],
     function () {
-      return new QuestionGCSModel("");
+      const model = new QuestionGCSModel("")
+      model.isRequired = true;
+      return model;
     },
     "question"
 );

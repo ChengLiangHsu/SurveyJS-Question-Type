@@ -1,6 +1,5 @@
 <script setup>
 import {Model, ComponentCollection, Question} from "survey-core";
-import "survey-core/i18n/traditional-chinese";
 import surveyTheme from "@/assets/surveyTheme/survey_theme.json";
 import gcsFormJson from "@/assets/json/gcsForm.json"
 
