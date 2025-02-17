@@ -1,4 +1,4 @@
-import { ElMessage } from "element-plus";
+import { ElMessage } from "src/utils/element-plus";
 
 class ShowMessage {
   constructor() {
