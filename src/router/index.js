@@ -1,6 +1,4 @@
 import {createRouter, createWebHistory} from "vue-router";
-import {storeToRefs} from "pinia";
-import {showMessage} from "@/utils/element-plus";
 
 
 const router = createRouter({

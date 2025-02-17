@@ -72,8 +72,6 @@ export default defineConfig(({mode}) => {
                  */
                 scss: {
                     additionalData: `
-            @use "@/assets/scss/element-plus/index.scss" as *;
-            @use "@/assets/scss/rwd.scss" as *;
           `,
                 },
             },

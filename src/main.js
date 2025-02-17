@@ -4,7 +4,6 @@ import router from "./router";
 import {surveyPlugin} from "survey-vue3-ui";
 import "survey-core/defaultV2.min.css";
 
-import "./assets/scss/all.scss";
 import QuestionGcs from "./components/Question-GCS.vue";
 
 

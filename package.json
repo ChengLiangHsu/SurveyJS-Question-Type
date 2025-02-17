@@ -43,5 +43,9 @@
     "vite-plugin-vue-devtools": "^7.7.2",
     "vitepress": "^1.6.3",
     "vitest": "^3.0.5"
-  }
+  },
+  "description": "* /* 因為我們的 value 是打算存 object 的，所以之前問你說哪些內建的題目也是用 object 的，那時候說是 matrix，所以就找 matrixdropdown 的原始碼來看（https://github.com/surveyjs/survey-library/blob/0aee614a4aab61aab3e90d8af5e81dd6ae63fff9/packages/survey-core/src/question_matrixdropdown.ts#L47C14-L47C41） 發現他的細節都在 QuestionMatrixDropdownModelBase（https://github.com/surveyjs/survey-library/blob/0aee614a4aab61aab3e90d8af5e81dd6ae63fff9/packages/survey-core/src/question_matrixdropdownbase.ts#L907） 然後他又繼承 QuestionMatrixBaseModel 然後這個又繼承一個 Question，我又在裡面搜尋 value 相關的 找到這列 https://github.com/surveyjs/survey-library/blob/aaf391325b981ca92d2e00224831f92bfed9d131/packages/survey-core/src/question.ts#L1662 進去裡面看this.setNewValue 的實作細節（https://github.com/surveyjs/survey-library/blob/aaf391325b981ca92d2e00224831f92bfed9d131/packages/survey-core/src/question.ts#L2395）",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }
