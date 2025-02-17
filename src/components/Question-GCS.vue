@@ -135,20 +135,25 @@ function updateValue(key_, value) {
 }
 </script>
 <template>
-  <ElRadioGroup
-      v-for="(radioGroup) in gcsRadioGroups"
-      v-model="gcsValues[radioGroup.key_]"
-      :key="radioGroup.label"
-  >
-    {{ radioGroup.label }}
-    <ElRadioButton
-        v-for="button in radioGroup.buttons"
-        :key="button.label"
-        :label="button.label"
-        :value="button.value"
-        @change="updateValue(radioGroup.key_, button.value)"
+  <div style="margin-right: 5px; width: 100%; overflow: auto">
+    <el-radio-group
+        v-for="(radioGroup) in gcsRadioGroups"
+        v-model="gcsValues[radioGroup.key_]"
+        :key="radioGroup.label"
+        style="overflow: auto"
     >
-    </ElRadioButton>
-  </ElRadioGroup>
-  {{ gcsValues }}
+      {{ radioGroup.label }}
+      <el-radio
+          v-for="button in radioGroup.buttons"
+          :key="button.label"
+          :label="button.label"
+          :value="button.value"
+          @change="updateValue(radioGroup.key_, button.value)"
+          border
+          style="margin-right: 2px"
+      >
+      </el-radio>
+    </el-radio-group>
+    {{ gcsValues }}
+  </div>
 </template>

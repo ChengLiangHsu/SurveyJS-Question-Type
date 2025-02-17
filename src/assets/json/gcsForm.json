@@ -5,19 +5,24 @@
       "title": "GCS",
       "elements": [
         {
-          "type": "custom-question",
-          "name": "custom",
-          "title": "客製輸入框"
-        },
-        {
           "type": "gcs_custom_question",
           "name": "gcs_custom_question",
-          "title": "gcs 客製題"
+          "title": "gcs Custom Question Type"
+        },
+        {
+          "type": "gcs_specialized_question",
+          "name": "gcs_specialized_question",
+          "title": "gcs Specialized Question Type"
+        },
+        {
+          "type": "gcs_composite_question",
+          "name": "gcs_composite_question",
+          "title": "gcs Composite Question Type"
         },
         {
           "type": "panel",
           "name": "GCS_panel",
-          "title": "gcs 一般題",
+          "title": "gcs Question Type",
           "elements": [
             {
               "type": "rating",
@@ -123,16 +128,6 @@
               "displayStyle": "decimal"
             }
           ]
-        },
-        {
-          "type": "gcs_specialized_question",
-          "name": "gcs_specialized_question",
-          "title": "gcs 專業題"
-        },
-        {
-          "type": "gcs_composite_question",
-          "name": "gcs_composite_question",
-          "title": "gcs 複合題"
         }
       ]
     }

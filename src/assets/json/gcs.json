@@ -1,0 +1,16 @@
+{
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "gcs",
+          "name": "gcs_custom_question_type",
+          "title": "GCS",
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}
