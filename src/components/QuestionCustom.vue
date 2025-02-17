@@ -11,7 +11,7 @@ export class QuestionCustomModel extends Question {
 
 Serializer.addClass(
     CUSTOM_TYPE,
-    [],
+    [{}],
     function () {
       return new QuestionCustomModel("");
     },
@@ -27,7 +27,12 @@ const props = defineProps({
     }
 )
 
-const customValue = ref(null);
+const customValue = ref(
+    {
+      value: "",
+      select: "",
+    }
+);
 
 function updateValue(val) {
   customValue.value = val;
@@ -36,7 +41,23 @@ function updateValue(val) {
 </script>
 <template>
   <div>
-    <el-input v-model="customValue" @input="updateValue($event)"/>
+    <el-input
+        v-model="customValue.value"
+        @change="updateValue(customValue)"
+    >
+      <template #prepend>
+        <el-select
+            v-model="customValue.select"
+            placeholder="Select"
+            style="width: 115px"
+            @change="updateValue(customValue)"
+        >
+          <el-option label="Restaurant" value="1"/>
+          <el-option label="Order No." value="2"/>
+          <el-option label="Tel" value="3"/>
+        </el-select>
+      </template>
+    </el-input>
   </div>
   {{ customValue }}
 </template>

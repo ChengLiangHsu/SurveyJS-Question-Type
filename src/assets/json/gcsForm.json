@@ -10,6 +10,11 @@
           "title": "客製輸入框"
         },
         {
+          "type": "gcs_custom_question",
+          "name": "gcs_custom_question",
+          "title": "gcs 客製題"
+        },
+        {
           "type": "panel",
           "name": "GCS_panel",
           "title": "gcs 一般題",
@@ -118,11 +123,6 @@
               "displayStyle": "decimal"
             }
           ]
-        },
-        {
-          "type": "gcs_custom_question",
-          "name": "gcs_custom_question",
-          "title": "gcs 客製題"
         },
         {
           "type": "gcs_specialized_question",

@@ -1,64 +1,75 @@
+### 需求
+
+1. 自定義題型 JSON
+2. 自定義渲染與儲存
+
+### 參考
+
+* https://surveyjs.io/form-library/documentation/customize-question-types/third-party-component-integration-vue
+
 ### Custom Question Type 實作步驟
 
 1. 新增一個 ```.vue``` 檔，```./src/components/QuestionCustom.vue```
-2. 建立並繼承``` survey-core ```的``` Question ```基底模型，用於自定義問題的屬性或方法
-3. 註冊``` survey-core ```的```Serializer```，用於將模型序列化成 JSON 格式
-    ``` javascript
-   <script>
-     import { Question, Serializer } from "survey-core";
-     const CUSTOM_TYPE = "custom-question"; 
-     export class QuestionCustomModel extends Question {
-       getType() {
-          return CUSTOM_TYPE;
-       }
-     }
-     Serializer.addClass(
-        CUSTOM_TYPE,
-        [],
-        function () {
-          return new QuestionCustomModel("")
-        },
-        "question"
-     );
-   </script>
-    ```
-4. 利用 Vue 組件實作 Custom Question 的內容與邏輯
+
+* 建立並繼承``` survey-core ```的``` Question ```基底模型，用於自定義問題的屬性或方法
+* 註冊``` survey-core ```的```Serializer```，用於將模型序列化成 JSON 格式
+
+```
+<script>
+import { Question, Serializer } from "survey-core";
+const CUSTOM_TYPE = "custom-question";
+export class QuestionCustomModel extends Question {
+   getType() {
+      return CUSTOM_TYPE;
+   }
+ }
+Serializer.addClass(
+    CUSTOM_TYPE,
+    [{}],
+    function () {
+      return new QuestionCustomModel("")
+    },
+    "question"
+ );
+```
+
+2. 利用 Vue 組件實作 Custom Question 的內容與邏輯
 
 * 定義```props```用來接收 _SurveyJS_ 渲染套件傳入的 Question Model 實例，因此可以透過 ```porps.question``` 存取與更新問題的屬性
 * 透過```ref()```建立一個響應式物件，用來存放問題的值
 * 實作```updateValue()```方法，用來更新 Question 的值
 
-   ``` javascript
-  <script setup>
-  const props = defineProps({
-          question: {
-              type: Object,
-              required: true,
-          }
+``` javascript
+<script setup>
+const props = defineProps({
+      question: {
+          type: Object,
+          required: true,
       }
-  )
-  
-  const customValue = ref(null);
-  
-  function updateValue(val) {
-     customValue.value = val;
-     props.question.value = customValue.value;
   }
-  </script>
-  <template>
-    <div>
-      <el-input v-model="customValue" @input="updateValue($event)" />
-    </div>
-  </template>
-   ```
+)
 
-5. 在 main.js 中註冊自定義問題組件至 Vue 實例
+const customValue = ref(null);
 
-    * 注意組件名稱需要以```survey-```為前綴搭配你的```CUSTOM_TYPE```
+function updateValue(val) {
+ customValue.value = val;
+ props.question.value = customValue.value;
+}
+</script>
+<template>
+<div>
+  <el-input v-model="customValue" @input="updateValue($event)" />
+</div>
+</template>
+```
 
-        ``` javascript
-        app.component("survey-custom-question", QuestionCustom);
-        ```
+3. 在 main.js 中註冊自定義問題組件至 Vue 實例
+
+* 注意組件名稱需要以```survey-```為前綴搭配你的```CUSTOM_TYPE```
+
+``` javascript
+app.component("survey-custom-question", QuestionCustom);
+```
 
 /*
 因為我們的 value 是打算存 object 的，所以之前問你說哪些內建的題目也是用 object 的，那時候說是 matrix，所以就找
