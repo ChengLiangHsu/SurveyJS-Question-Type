@@ -3,7 +3,7 @@ import {Model, ComponentCollection, Question} from "survey-core";
 import surveyTheme from "@/assets/surveyTheme/survey_theme.json";
 import gcsFormJson from "@/assets/json/gcsForm.json"
 
-
+// Specialized Question
 ComponentCollection.Instance.add({
   // A unique name; must use lowercase
   name: "gcs_specialized_question",
@@ -34,7 +34,7 @@ ComponentCollection.Instance.add({
   // Inherit all or individual properties from the base question type
   inheritBaseProps: ["isRequired"] // or true
 });
-
+// Composite Question
 ComponentCollection.Instance.add({
   // A unique name; must use lowercase
   name: "gcs_composite_question",

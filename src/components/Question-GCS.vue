@@ -1,4 +1,4 @@
-<!-- src/components/Question-GCS.vue -->
+<!--Custom question-->
 <script>
 import {ElementFactory, Question, Serializer} from "survey-core";
 

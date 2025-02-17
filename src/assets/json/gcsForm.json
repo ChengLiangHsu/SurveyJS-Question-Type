@@ -5,6 +5,11 @@
       "title": "GCS",
       "elements": [
         {
+          "type": "custom-question",
+          "name": "custom",
+          "title": "客製輸入框"
+        },
+        {
           "type": "panel",
           "name": "GCS_panel",
           "title": "gcs 一般題",
