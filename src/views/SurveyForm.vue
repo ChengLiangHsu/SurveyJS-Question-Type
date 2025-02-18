@@ -1,7 +1,7 @@
 <script setup>
 import {Model, ComponentCollection, Question} from "survey-core";
 import surveyTheme from "@/assets/surveyTheme/survey_theme.json";
-import gcsFormJson from "@/assets/json/gcsForm.json"
+import gcsFormJson from "@/assets/json/gcsForm.json";
 
 // Specialized Question
 ComponentCollection.Instance.add({
@@ -150,6 +150,14 @@ survey.onValueChanged.add(() => {
 
 const onInit = async () => {
   survey.fromJSON(gcsFormJson);
+  survey.data = {
+    "gcs_custom_question": {
+      "GCS_E": 4,
+      "GCS_V": 5,
+      "GCS_M": 6,
+    },
+    "custom_question": {"value": "null", "select": "null"}
+  };
 }
 
 

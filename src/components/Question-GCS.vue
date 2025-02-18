@@ -42,7 +42,7 @@ const props = defineProps({
 
 const gcsRadioGroups = [
   {
-    key_: "GCS-E",
+    key_: "GCS_E",
     label: "睜眼",
     buttons: [
       {
@@ -64,7 +64,7 @@ const gcsRadioGroups = [
     ]
   },
   {
-    key_: "GCS-V",
+    key_: "GCS_V",
     label: "說話",
     buttons: [
       {
@@ -90,7 +90,7 @@ const gcsRadioGroups = [
     ]
   },
   {
-    key_: "GCS-M",
+    key_: "GCS_M",
     label: "動作",
     buttons: [
       {
@@ -123,9 +123,9 @@ const gcsRadioGroups = [
 
 const gcsValues = ref(
     {
-      "GCS-E": null,
-      "GCS-V": null,
-      "GCS-M": null
+      "GCS_E": null,
+      "GCS_V": null,
+      "GCS_M": null
     }
 )
 
