@@ -121,7 +121,7 @@ const gcsRadioGroups = [
   }
 ]
 
-const gcsValues = ref(
+const gcsValues = ref({...props.question.value} ||
     {
       "GCS_E": null,
       "GCS_V": null,
